@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './config/index.js'
 import Vant from 'vant'
 // 加载vant全局样式
 import 'vant/lib/index.css'
