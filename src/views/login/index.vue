@@ -1,7 +1,10 @@
 <template>
   <div class="login-container">
     <!-- 导航栏 -->
-    <van-nav-bar class="page-nav-bar" title="登陆"/>
+    <van-nav-bar class="page-nav-bar" title="登陆">
+      <!-- 自定义图标，由于背景色定义为全局，因此需要在全局样式中将图片的颜色也设置为白色 -->
+      <van-icon slot="left" name="cross" @click="$router.back()"/>
+    </van-nav-bar>
 
     <!-- 登陆表单 -->
     <van-form ref="loginForm" @submit="onSubmit">
@@ -95,6 +98,9 @@ export default {
         console.log('登陆成功', res)
         this.setUser(res.data.token)
         this.$toast.success('登录成功')
+        // 登录成功后跳转回原来的页面
+        // 但是该方式不严谨
+        this.$router.back()
       } catch (err) {
         if (err.response && err.response.status === 400) {
           this.$toast.fail('手机号或验证码错误')

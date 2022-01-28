@@ -24,3 +24,19 @@ export const getSmsCode = mobile => {
   //   url: `/app/v1_0/sms/codes/${mobile}`
   // })
 }
+
+export const getUserInfo = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: { username: 'HelLsdf', toutiao: 23, focus: 120, likes: 239, fensi: 87 }, code: 200 })
+    }, 3000)
+  })
+  // return request({
+  //   method: 'GET',
+  //   url: `/app/v1_0/sms/codes/${mobile}`,
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     token: this.$store.state.user.token
+  //   }
+  // })
+}
