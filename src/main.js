@@ -10,6 +10,8 @@ import './styles/index.less'
 // REM全局动态自适应
 import 'amfe-flexible'
 
+import './utils/days'
+
 Vue.config.productionTip = false
 Vue.use(Vant)
 
