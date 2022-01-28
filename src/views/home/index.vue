@@ -18,23 +18,37 @@
       </van-tab>
       <div slot="nav-right" class="placeholder"/>
       <!-- 使用右插槽添加hamburger按钮 -->
-      <div slot="nav-right" class="hamburger-btn">
+      <div slot="nav-right" class="hamburger-btn" @click="isChannelEditShow = true">
         <i class="iconfont toutiao-gengduo"/>
       </div>
     </van-tabs>
+
+    <!-- 频道编辑 -->
+    <van-popup
+      class="edit-channel-popup"
+      v-model="isChannelEditShow"
+      position="bottom"
+      closeable
+      close-icon-position="top-left"
+    >
+      <channel-edit :my-channels="channels" :active-index.sync="active" @close-popup="isChannelEditShow = false"/>
+    </van-popup>
+    <!-- /频道编辑 -->
   </div>
 </template>
 <script>
 import { getUserChannels } from '@/api/user'
 import ArticleList from './components/article-list.vue'
+import ChannelEdit from './components/channel-edit.vue'
 export default {
   name: 'shouye',
-  components: { ArticleList },
+  components: { ArticleList, ChannelEdit },
   data () {
     return {
       // 前激活标签对应的索引值
       active: 0,
-      channels: []
+      channels: [],
+      isChannelEditShow: false
     }
   },
   created () {
@@ -156,6 +170,12 @@ export default {
       */
       flex-shrink: 0;
     }
+  }
+
+  .edit-channel-popup {
+    height: 100%;
+    padding-top: 100px;
+    box-sizing: border-box;
   }
 }
 </style>

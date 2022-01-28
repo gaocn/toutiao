@@ -49,6 +49,32 @@ export const getUserChannels = () => {
         data: {
           channels: [
             { id: 0, name: '关注' },
+            { id: 2, name: '附近' },
+            { id: 4, name: '体育' },
+            { id: 5, name: '要闻' },
+            { id: 7, name: '北京' },
+            { id: 9, name: '科技' },
+            { id: 11, name: '段子' },
+            { id: 15, name: '汽车' },
+            { id: 16, name: '网易号' },
+            { id: 17, name: '时尚' },
+            { id: 19, name: 'NBA' },
+            { id: 21, name: '游戏' }
+          ]
+        },
+        code: 200
+      })
+    }, 1000)
+  })
+}
+
+export const getAllChannels = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        data: {
+          channels: [
+            { id: 0, name: '关注' },
             { id: 1, name: '头条' },
             { id: 2, name: '附近' },
             { id: 3, name: '娱乐' },
@@ -99,5 +125,23 @@ export const getArticles = (req) => {
         code: 200
       })
     }, 2000)
+  })
+}
+
+export const addUserChannel = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('addUserChannel', data)
+      resolve({ data: '保存成功', code: 200 })
+    }, 1000)
+  })
+}
+
+export const deleteUserChannel = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('deleteUserChannel', data)
+      resolve({ data: '删除成功', code: 200 })
+    }, 1000)
   })
 }
