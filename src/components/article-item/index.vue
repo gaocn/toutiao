@@ -1,5 +1,16 @@
 <template>
-    <van-cell class="article-item" clickable>
+    <!--
+      拼接方式：
+      :to="'/article/' + article.articleId"
+      :to="`/article/${article.articleId}`"
+      :to="{
+        name: 'article', //根据路由名称跳转
+        params: {
+          articleId: article.articleId //属性名：路由设计中的动态路由参数
+        }
+      }"
+     -->
+    <van-cell class="article-item" clickable :to="`/article/${article.articleId}`">
       <!-- 最多显示两行，多余的内容会被省略-->
       <div slot="title" class="title van-multi-ellipsis--l2">{{ article.title }}</div>
       <div slot="label">

@@ -110,15 +110,15 @@ export const getArticles = (req) => {
       resolve({
         data: {
           list: [
-            { title: '文章将右侧图片固定宽度，让标题占空剩余空间，标题1', authorName: 'David', commentCount: 20, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/apple-1.jpg'] } },
-            { title: '文章标题2', authorName: 'Lilei', commentCount: 34, publishDate: new Date(), cover: {} },
-            { title: '文章章标题2章标题2标将右侧图片固定宽度，让标题占空剩余空间，题3', authorName: 'WangS', commentCount: 2120, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/apple-2.jpg', 'https://img01.yzcdn.cn/vant/cat.jpeg'] } },
-            { title: '文章标题4', authorName: 'ZhangCU', commentCount: 230, publishDate: new Date(), cover: {} },
-            { title: '将右侧图章标题2章标题2章标题2片固定宽度，让标题占空剩余空间，', authorName: 'Jack.LDavid', commentCount: 260, publishDate: new Date(), cover: { type: 1, images: ['https://img01.yzcdn.cn/vant/apple-2.jpg'] } },
-            { title: '文章标余空间，题6', authorName: 'Gowe.S', commentCount: 78, publishDate: new Date(), cover: {} },
-            { title: '文章标章标题2题7', authorName: 'Marri', commentCount: 56, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/cat.jpeg', 'https://img01.yzcdn.cn/vant/apple-1.jpg', 'https://img01.yzcdn.cn/vant/cat.jpeg'] } },
-            { title: '文章标将右章标题2章标题2侧图片固定宽度，让标题占空剩余空间，题8', authorName: 'Mys', commentCount: 32, publishDate: new Date(), cover: {} },
-            { title: '文章标题9', authorName: 'Da', commentCount: 45, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/cat.jpeg'] } }
+            { articleId: '1', title: '文章将右侧图片固定宽度，让标题占空剩余空间，标题1', authorName: 'David', commentCount: 20, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/apple-1.jpg'] } },
+            { articleId: '2', title: '文章标题2', authorName: 'Lilei', commentCount: 34, publishDate: new Date(), cover: {} },
+            { articleId: '3', title: '文章章标题2章标题2标将右侧图片固定宽度，让标题占空剩余空间，题3', authorName: 'WangS', commentCount: 2120, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/apple-2.jpg', 'https://img01.yzcdn.cn/vant/cat.jpeg'] } },
+            { articleId: '4', title: '文章标题4', authorName: 'ZhangCU', commentCount: 230, publishDate: new Date(), cover: {} },
+            { articleId: '5', title: '将右侧图章标题2章标题2章标题2片固定宽度，让标题占空剩余空间，', authorName: 'Jack.LDavid', commentCount: 260, publishDate: new Date(), cover: { type: 1, images: ['https://img01.yzcdn.cn/vant/apple-2.jpg'] } },
+            { articleId: '6', title: '文章标余空间，题6', authorName: 'Gowe.S', commentCount: 78, publishDate: new Date(), cover: {} },
+            { articleId: '7', title: '文章标章标题2题7', authorName: 'Marri', commentCount: 56, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/cat.jpeg', 'https://img01.yzcdn.cn/vant/apple-1.jpg', 'https://img01.yzcdn.cn/vant/cat.jpeg'] } },
+            { articleId: '8', title: '文章标将右章标题2章标题2侧图片固定宽度，让标题占空剩余空间，题8', authorName: 'Mys', commentCount: 32, publishDate: new Date(), cover: {} },
+            { articleId: '9', title: '文章标题9', authorName: 'Da', commentCount: 45, publishDate: new Date(), cover: { type: 3, images: ['https://img01.yzcdn.cn/vant/cat.jpeg'] } }
           ],
           preTimeStamp: new Date().getTime
         },
@@ -142,6 +142,22 @@ export const deleteUserChannel = data => {
     setTimeout(() => {
       console.log('deleteUserChannel', data)
       resolve({ data: '删除成功', code: 200 })
+    }, 1000)
+  })
+}
+
+export const addFollow = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: '关注成功', code: 200 })
+    }, 1000)
+  })
+}
+
+export const deleteFollow = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: '取消关注成功', code: 200 })
     }, 1000)
   })
 }
