@@ -161,3 +161,36 @@ export const deleteFollow = data => {
     }, 1000)
   })
 }
+
+/**
+ * 获取当前登录用户的个人资料
+ */
+export const getUserProfile = target => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: { data: { name: 'govind', gender: 0, birthday: '2022-01-29', photo: 'https://img01.yzcdn.cn/vant/cat.jpeg' } }, code: 200 })
+    }, 1000)
+  })
+}
+
+/**
+ * 更新用户资料
+ */
+export const updateUserProfile = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: '取消关注成功', code: 200 })
+    }, 1000)
+  })
+}
+
+/**
+ * 更新用户照片资料
+ */
+export const updateUserPhoto = data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: '取消关注成功', code: 200 })
+    }, 1000)
+  })
+}
